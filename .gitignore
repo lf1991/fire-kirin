@@ -6,7 +6,6 @@
 *.njsproj
 *.sln
 out/
-
 *.jar
 *.war
 *.ear
