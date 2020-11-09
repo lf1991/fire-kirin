@@ -46,12 +46,17 @@ public class JobMain extends Configured implements Tool {
         job.setMapOutputValueClass(LongWritable.class);
 
         //5.shuffle阶段===> 分区 排序 规约 分组（采用默认）
+        //设置分区对象
+        job.setPartitionerClass(PartitionerOwn.class);
+        //
 
         //6.reduce阶段 设置reducer类别
         job.setReducerClass(WordCountReducer.class);
         //7.设置reduce阶段的类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(LongWritable.class);
+        //设置reduce的个数
+        job.setNumReduceTasks(2);
 
         //8.设置输出类和文件输出路径
         job.setOutputFormatClass(TextOutputFormat.class);
