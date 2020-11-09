@@ -1,4 +1,4 @@
-package com.feilis.mapreduce;
+package com.feilis.mapreduce.wordcount;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

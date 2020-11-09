@@ -192,7 +192,7 @@ public class HdfsApi {
         // 1. 获取FileSystem对象
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop-master:8020"), new Configuration());
         // 2. 调用方法实现文件的上传
-        fileSystem.copyFromLocalFile(new Path("E://hadoop//a.txt"), new Path("/lifei/test/hello.txt"));
+        fileSystem.copyFromLocalFile(new Path("E://hadoop//wordSort.txt"), new Path("/lifei/wordSort.txt"));
         fileSystem.close();
     }
 }
