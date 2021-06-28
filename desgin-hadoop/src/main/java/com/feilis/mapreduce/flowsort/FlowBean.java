@@ -1,6 +1,7 @@
 package com.feilis.mapreduce.flowsort;
 
 import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -13,7 +14,7 @@ import java.io.IOException;
  * @Date 2020/11/9 15:58
  * @Version V1.0
  */
-public class FlowBean implements Writable{
+public class FlowBean implements WritableComparable<FlowBean> {
 
 
     private Integer upFlow; //上行包
@@ -95,5 +96,11 @@ public class FlowBean implements Writable{
         this.downFlow = dataInput.readInt();
         this.upCountFlow = dataInput.readInt();
         this.downCountFlow = dataInput.readInt();
+    }
+
+    @Override
+    public int compareTo(FlowBean o) {
+        //按照手机流量上行数据包排序
+        return this.upFlow.compareTo(o.upFlow) * -1;
     }
 }

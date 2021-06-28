@@ -6,11 +6,14 @@
     <groupId>com.feilis</groupId>
     <artifactId>desgin-hadoop</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>basic-java</module>
+    </modules>
 
     <name>desgin-hadoop</name>
     <url>http://www.example.com</url>
 
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
